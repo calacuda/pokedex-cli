@@ -15,20 +15,25 @@ cd pokedex-cli/
 pip install .
 ```
 
-For the best output quality, please adjust the vertical line spacing in your terminal emulator until the block characters connect.
+For the best output quality, please adjust the vertical line spacing in your
+terminal emulator until the block characters connect.
 
-## Suported Python Versions
+## Supported Python Versions
 
 I know it works with 3.8. but it should work with most versions of python3 after
 and including 3.6 (I think).
 
+
 ## Things That Work
 
-the basic functionality seen in the screen shots.
+almost every thing
 
-## Things That Dont Work
 
-The format flag (-f). Thats the only thing.
+## Things That Don't Work
+
+"-f page" doesn't work. but I don"t think it works on the original, so I'm not
+sure how it it supposed to work.
+
 
 ## Usage
 
@@ -63,6 +68,8 @@ Options:
 - Icons adapted from [Pikachumazzinga on DeviantArt](http://pikachumazzinga.deviantart.com/art/Pokemon-Essentials-Icon-Pack-ORAS-UPDATE-424114559)
 - origianl code by [Tenchi2xh](https://github.com/Tenchi2xh/pokedex-cli)
 
-Pokémon © 2002-2016 Pokémon. © 1995-2016 Nintendo/Creatures Inc./GAME FREAK inc. TM, ® and Pokémon character names are trademarks of Nintendo.
+Pokémon © 2002-2016 Pokémon. © 1995-2016 Nintendo/Creatures Inc./GAME FREAK inc.
+TM, ® and Pokémon character names are trademarks of Nintendo.
 
-No copyright or trademark infringement is intended in using Pokémon content in this project.
+No copyright or trademark infringement is intended in using Pokémon content in
+this project.

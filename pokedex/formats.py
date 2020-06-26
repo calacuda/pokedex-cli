@@ -53,14 +53,14 @@ def card(pokemon, shiny=False, mega=False):
 
 def json(pokemon):
     print(json_lib.dumps({
-        "number": pokemon.number,
-        "name": pokemon.name,
+        "number": int(pokemon.number),
+        "name": str(pokemon.name),
         "genus": pokemon.genus,
         "flavor": pokemon.flavor,
-        "types": pokemon.types,
+        "types": tuple(pokemon.types),
         "chain": [{"number": stage[0], "name": stage[1]} for stage in pokemon.chain],
-        "height": pokemon.height,
-        "weight": pokemon.weight
+        "height": int(pokemon.height),
+        "weight": int(pokemon.weight)
     }, indent=4))
 
 
@@ -79,7 +79,7 @@ def simple(pokemon):
                 return evolutions
         return None, []
 
-    ancestor, evolutions = find_evolutions(pokemon.chain, pokemon.chain.keys()[0])
+    ancestor, evolutions = find_evolutions(pokemon.chain, tuple(pokemon.chain.keys())[0])
     evolutions = map(lambda e: "%s (#%03d)" % (e[1], e[0]), evolutions)
     if ancestor[1] == pokemon.name:
         ancestor = None
