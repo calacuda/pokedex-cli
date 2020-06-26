@@ -5,6 +5,7 @@ import os
 from .exceptions import *
 from .database.queries import *
 
+
 class Pokemon(object):
     def __init__(self, pokemon, language=default_language, version=default_version):
         try:
@@ -15,21 +16,21 @@ class Pokemon(object):
                 raise NoSuchPokemon(pokemon)
         except NoSuchPokemon:
             self.number = 0
-            self.name   = "MISSINGNO."
-            self.genus  = "???"
+            self.name = "MISSINGNO."
+            self.genus = "???"
             self.flavor = u"Pokémon %s not found" % pokemon
-            self.types  = ["flying", "normal"]
-            self.chain  = {(0, "MISSINGNO."): {}}
+            self.types = ["flying", "normal"]
+            self.chain = {(0, "MISSINGNO."): {}}
             self.height = 10
             self.weight = 100
         else:
             entry = results[0]
             self.number = entry[0]
-            self.name   = entry[1]
-            self.genus  = entry[2]
+            self.name = entry[1]
+            self.genus = entry[2]
             self.flavor = entry[3].replace("\n", " ").replace("\f", " ")
-            self.types  = get_pokemon_type(self.number)
-            self.chain  = get_pokemon_evolution_chain(self.number, language=language)
+            self.types = get_pokemon_type(self.number)
+            self.chain = get_pokemon_evolution_chain(self.number, language=language)
             self.height = entry[4]
             self.weight = entry[5]
 

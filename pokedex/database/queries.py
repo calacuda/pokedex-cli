@@ -6,11 +6,13 @@ import sqlite3
 from .. import resource_path
 from ..exceptions import *
 
+
 db = sqlite3.connect(os.path.join(resource_path, "veekun-pokedex.sqlite"))
 cursor = db.cursor()
 
 default_version = "x"
 default_language = "en"
+
 
 def get_versions():
     cursor.execute("""SELECT identifier
@@ -67,6 +69,8 @@ def get_pokemon_type(pokemon_id):
                        WHERE pokemon_id={pokemon_id}
                    """.format(pokemon_id=pokemon_id))
     types = sorted([(row[0], int(row[1])) for row in cursor.fetchall()], key=lambda t: t[1])
+    # print(f"types :  {types}\n")
+    # print(f"types2 :  {list(map(lambda t: all_types[t[0]], types))}")
     return map(lambda t: all_types[t[0]], types)
 
 
@@ -76,8 +80,12 @@ def get_pokemon_evolution_chain(pokemon_id, language=default_language):
                        WHERE evolution_chain_id = (SELECT evolution_chain_id FROM pokemon_species WHERE id={pokemon_id})
                    """.format(pokemon_id=pokemon_id))
     chain = [(row[0], get_pokemon_name(row[0], language), row[1]) for row in cursor.fetchall()]
-    root = (pkmn for pkmn in chain if pkmn[2] is None).next()
+    # print(f"\nchain : ", chain, end="\n\n")
+    root = next((pkmn for pkmn in chain if pkmn[2] is None))  # .next()
+    # print([elm for elm in root])
+    # print(root, end="\n\n")
     tree = {root: {}}
+    # print(tree)
     del chain[chain.index(root)]
 
     def add_evolutions(tree, root, chain):

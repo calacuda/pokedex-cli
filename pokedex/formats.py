@@ -9,9 +9,10 @@ from .graphics.draw import *
 icon_width = 32
 format_names = ["card", "json", "simple", "line", "page"]
 
+
 def card(pokemon, shiny=False, mega=False):
 
-    evolutions_height = get_height(pokemon.chain.values()[0])
+    evolutions_height = get_height(list(pokemon.chain.values())[0])
     evolutions_width = get_width(pokemon.chain)
     content_width = max([evolutions_width, len(pokemon.genus) + 3 + 8 + 12, 32])
 
@@ -25,14 +26,21 @@ def card(pokemon, shiny=False, mega=False):
         buffer.put_line((1, y), " " * width, bg=0)
 
     for mega in range(icons):
-        draw_image(buffer, os.path.join(resource_path, pokemon.icon(shiny=shiny, mega=mega)), x0=content_width+1+icon_width*mega)
+        draw_image(buffer, os.path.join(resource_path, pokemon.icon(
+            shiny=shiny, mega=mega)), x0=content_width+1+icon_width*mega)
 
     buffer.put_line((3, 1), pokemon.name, bg=0)
     buffer.put_line((3, 2), u"%s Pokémon" % pokemon.genus.capitalize(), fg=245, bg=0)
-    buffer.put_line((3, 3), "%0.2f m / %0.1f kg" % (pokemon.height / 10.0, pokemon.weight / 10.0), fg=240, bg=0)
+    buffer.put_line((3, 3), "%0.2f m / %0.1f kg" %
+                    (pokemon.height / 10.0, pokemon.weight / 10.0), fg=240, bg=0)
 
-    type1 = pokemon.types[0]
-    type2 = pokemon.types[1] if len(pokemon.types) > 1 else None
+    # print(tuple(pokemon.types))
+    # print(len(tuple(pokemon.types)))
+    # print(tuple(pokemon.types))
+    pkn_types = tuple(pokemon.types)
+    # print(pokemon.types)
+    type1 = pkn_types[0]
+    type2 = pkn_types[1] if len(pkn_types) > 1 else None
 
     draw_number(buffer, pokemon.number, bg=0, x0=content_width-12, y0=1)
     draw_type(buffer, type1, type2, x0=3, y0=5)
@@ -58,7 +66,8 @@ def json(pokemon):
 
 def simple(pokemon):
     print(u"%s (#%03d), %s Pokémon" % (pokemon.name, pokemon.number, pokemon.genus))
-    print("%s, %0.2f m, %0.1f kg" % ("/".join(map(lambda s: s.capitalize(), pokemon.types)), pokemon.height / 10.0, pokemon.weight / 10.0))
+    print("%s, %0.2f m, %0.1f kg" % ("/".join(map(lambda s: s.capitalize(), pokemon.types)),
+                                     pokemon.height / 10.0, pokemon.weight / 10.0))
     print(pokemon.flavor)
 
     def find_evolutions(chain, ancestor):
@@ -83,4 +92,5 @@ def simple(pokemon):
 
 def line(pokemon):
     evolution = " > ".join(["#%03d" % stage[0] for stage in pokemon.chain])
-    print(u"%s (#%03d): %s | %s" % (pokemon.name, pokemon.number, "/".join(map(lambda s: s.capitalize(), pokemon.types)), evolution))
+    print(u"%s (#%03d): %s | %s" % (pokemon.name, pokemon.number,
+                                    "/".join(map(lambda s: s.capitalize(), pokemon.types)), evolution))

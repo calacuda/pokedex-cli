@@ -35,5 +35,6 @@ def pokedex(pokemon, shiny, mega, language, pokedex_version, format):
     else:
         getattr(formats, format)(pkmn)
 
+
 if __name__ == "__main__":
     pokedex()

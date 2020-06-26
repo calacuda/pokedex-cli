@@ -1,5 +1,3 @@
-![](https://img.shields.io/github/tag/Tenchi2xh/pokedex-cli.svg)
-
 # Pokédex CLI
 
 The Pocket Monster Index, now in your terminal!
@@ -12,10 +10,25 @@ The Pocket Monster Index, now in your terminal!
 ## Installation
 
 ```
-pip install "git+https://github.com/Tenchi2xh/pokedex-cli.git@v0.1.4#egg=pokedex-cli"
+git clone https://github.com/calacuda/pokedex-cli.git
+cd pokedex-cli/
+pip install .
 ```
 
 For the best output quality, please adjust the vertical line spacing in your terminal emulator until the block characters connect.
+
+## Suported Python Versions
+
+I know it works with 3.8. but it should work with most versions of python3 after
+and including 3.6 (I think).
+
+## Things That Work
+
+the basic functionality seen in the screen shots.
+
+## Things That Dont Work
+
+The format flag (-f). Thats the only thing.
 
 ## Usage
 
@@ -48,6 +61,7 @@ Options:
 
 - Database fetched at runtime from [Veekun](http://veekun.com/dex/downloads)
 - Icons adapted from [Pikachumazzinga on DeviantArt](http://pikachumazzinga.deviantart.com/art/Pokemon-Essentials-Icon-Pack-ORAS-UPDATE-424114559)
+- origianl code by [Tenchi2xh](https://github.com/Tenchi2xh/pokedex-cli)
 
 Pokémon © 2002-2016 Pokémon. © 1995-2016 Nintendo/Creatures Inc./GAME FREAK inc. TM, ® and Pokémon character names are trademarks of Nintendo.
 

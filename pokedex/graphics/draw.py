@@ -94,7 +94,8 @@ def draw_number(buffer, number, x0=0, y0=0, fg=15, bg=-1):
 def draw_type(buffer, type1, type2=None, x0=0, y0=0):
     buffer.put_line((x0, y0), " %s " % type1.upper(), fg=0, bg=type_colors[type1.lower()])
     if type2:
-        buffer.put_line((x0 + len(type1) + 3, y0), " %s " % type2.upper(), fg=0, bg=type_colors[type2.lower()])
+        buffer.put_line((x0 + len(type1) + 3, y0), " %s " %
+                        type2.upper(), fg=0, bg=type_colors[type2.lower()])
 
 
 def draw_flavor_text(buffer, text, width, x0=0, y0=0, fg=15, bg=-1):
@@ -135,4 +136,4 @@ def draw_evolutions(buffer, chain, number, x0=0, y0=0, bg=-1):
                 draw(e, evolutions[e], longest, ox0 + ox1, oy0 + oy1 * 2 + last)
                 last = get_height(evolutions[e]) - 2
 
-    draw(chain.keys()[0], chain.values()[0], 0, 0, 0)
+    draw(tuple(chain.keys())[0], tuple(chain.values())[0], 0, 0, 0)
