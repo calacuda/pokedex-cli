@@ -4,8 +4,10 @@ from .conversion import rgb2short
 
 def rgb_to_xterm(color):
     hex_color = "%02x%02x%02x" % color
+    if color == (0, 0, 0):
+        return 0
     return int(rgb2short(hex_color)[0])
-
+    
 reset_code = "\033[0m"
 
 def format_fg(fg):

@@ -21,7 +21,7 @@ terminal emulator until the block characters connect.
 ## Supported Python Versions
 
 I know it works with 3.8. but it should work with most versions of python3 after
-and including 3.6 (I think).
+and including 3.6.
 
 
 ## Things That Work
@@ -31,8 +31,8 @@ almost every thing
 
 ## Things That Don't Work
 
-"-f page" doesn't work. but I don"t think it works on the original, so I'm not
-sure how it it supposed to work.
+"-f page" doesn't work. but it didn't work in the original, so I have no way of knowing
+how it is supposed to work.
 
 
 ## Usage
