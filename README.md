@@ -10,9 +10,7 @@ The Pocket Monster Index, now in your terminal!
 ## Installation
 
 ```
-git clone https://github.com/calacuda/pokedex-cli.git
-cd pokedex-cli/
-pip install .
+pipx install git+https://github.com/calacuda/pokedex-cli.git
 ```
 
 For the best output quality, please adjust the vertical line spacing in your
@@ -66,7 +64,7 @@ Options:
 
 - Database fetched at runtime from [Veekun](http://veekun.com/dex/downloads)
 - Icons adapted from [Pikachumazzinga on DeviantArt](http://pikachumazzinga.deviantart.com/art/Pokemon-Essentials-Icon-Pack-ORAS-UPDATE-424114559)
-- origianl code by [Tenchi2xh](https://github.com/Tenchi2xh/pokedex-cli)
+- original code by [Tenchi2xh](https://github.com/Tenchi2xh/pokedex-cli)
 
 Pokémon © 2002-2016 Pokémon. © 1995-2016 Nintendo/Creatures Inc./GAME FREAK inc.
 TM, ® and Pokémon character names are trademarks of Nintendo.
