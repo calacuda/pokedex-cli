@@ -3,4 +3,5 @@
 __pycache__
 pokedex/resources/*.sqlite
 pokedex/test.py
+pokedex_cli.egg-info
 TODO.md

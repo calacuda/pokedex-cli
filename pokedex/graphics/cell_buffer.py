@@ -13,9 +13,9 @@ class Buffer(object):
     def __init__(self, width=80, height=16):
         self.width = width
         self.height = height
-        self.buffer = [[Cell(" ", 15, -1) for x in range(width)] for y in range(height)]
+        self.buffer = [[Cell(" ", 15, 0) for x in range(width)] for y in range(height)]
 
-    def put_cell(self, position, character, fg=15, bg=-1):
+    def put_cell(self, position, character, fg=15, bg=0):
         x, y = position
         assert x >= 0
         assert y >= 0
@@ -23,12 +23,17 @@ class Buffer(object):
         assert y < self.height
 
         assert type(character) == str  # (str, unicode)
-        if len(character) == 0:
-            character = " "
+
+        # this does nothing the char len is always 1.
+        # uncoment next line for proof
+        # print("charcter len : ", len(character))
+
+        # if len(character) == 0:
+        #     character = " "
 
         self.buffer[y][x] = Cell(character, fg, bg)
 
-    def put_line(self, position, line, fg=15, bg=-1):
+    def put_line(self, position, line, fg=15, bg=0):
         x, y = position
         for i, char in enumerate(line):
             self.put_cell((x+i, y), char, fg, bg)
@@ -37,7 +42,7 @@ class Buffer(object):
         output = []
         for line in self.buffer:
             result = ""
-            last_fg, last_bg = -1, -1
+            last_fg, last_bg = 0, 0
 
             for cell in line:
                 if cell.fg != last_fg:

@@ -79,7 +79,24 @@ def draw_image(buffer, path, x0=0, y0=0):
                 color_top = rgb_to_xterm(pixels[x, y])
                 color_bottom = rgb_to_xterm(pixels[x, y + 1])
 
-                buffer.put_cell((x0 + x, (y0 + y) // 2), u"▀", color_top, color_bottom)
+                if color_top == 0 and color_bottom == 0:
+                    char = u" "
+                    # print(f"({x},{y}) => (NONE)")
+                # elif color_top != 0 and color_bottom == 0:
+                #     char = u"▀"
+                #     print(f"({x},{y}) => ({color_top}, {color_bottom})")
+                elif color_top == 0 and color_bottom != 0:
+                    char = u"▄"
+                    # char = u"▀"
+                    color_top, color_bottom = color_bottom, color_top
+                    # print(f"({x},{y}) => ({color_top}, {color_bottom}) (upside down)")
+
+                else:
+                    # print(f"({x},{y}) => ({color_top}, {color_bottom})")
+                    char = u"▀"
+
+
+                buffer.put_cell((x0 + x, (y0 + y) // 2), char, color_top, color_bottom)
 
 
 def draw_number(buffer, number, x0=0, y0=0, fg=15, bg=-1):
