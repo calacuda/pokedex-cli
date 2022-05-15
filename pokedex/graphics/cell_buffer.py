@@ -58,6 +58,6 @@ class Buffer(object):
         return output
 
     def display(self):
-        print()
+        # print()
         for line in self.render():
             print(line)

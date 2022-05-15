@@ -34,7 +34,8 @@ setup(
     keywords=["pokedex", "pokemon", "terminal", "cli"],
     classifiers=[
         "Development Status :: 4 - Beta",
-        "Programming Language :: Python :: 3.8"
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.10"
     ],
     install_requires=["Pillow", "click", ],
     extras_require={

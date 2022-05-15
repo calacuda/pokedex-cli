@@ -8,7 +8,7 @@ from .database.get import download_database
 from .exceptions import *
 from . import formats
 
-__version__ = "0.1.5"
+__version__ = "0.2.0"
 
 
 @click.command()
