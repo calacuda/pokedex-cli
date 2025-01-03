@@ -9,10 +9,22 @@ The Pocket Monster Index, now in your terminal!
 
 ## Installation
 
+The simpliest method of install is with the command runner [just](https://github.com/casey/just); Simply:
+
 ```
-git clone https://github.com/calacuda/pokedex-cli.git
-cd pokedex-cli/
-pip install -e .
+$> git clone https://github.com/calacuda/pokedex-cli.git
+$> cd pokedex-cli
+$> just install
+```
+
+However, if you don't have just installed; run:
+
+```
+$> git clone https://github.com/calacuda/pokedex-cli.git
+$> cd pokedex-cli/
+$> pip install -e .
+$> mkdir -p ~/.cache/pokedex/resources/
+$> cp -ur /tmp/pokedex-cli/pokedex/resources/* ~/.cache/pokedex/resources/
 ```
 
 **NOTE:** you might need to add `--break-system-packages` to the above pip command (if your linux distribution's version of python requires it).
