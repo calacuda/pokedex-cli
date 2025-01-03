@@ -15,7 +15,7 @@ cd pokedex-cli/
 pip install -e .
 ```
 
-**NOTE:** you might need to add `--break-system-packages` if your linux distribution's version of python needs it.
+**NOTE:** you might need to add `--break-system-packages` to the above pip command (if your linux distribution's version of python requires it).
 
 For the best output quality, please adjust the vertical line spacing in your
 terminal emulator until the block characters connect.
