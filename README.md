@@ -15,12 +15,18 @@ cd pokedex-cli/
 pip install -e .
 ```
 
+  NOTE: you might need to add `--break-system-packages` if your linux distribution's version of python needs it.
+
 For the best output quality, please adjust the vertical line spacing in your
 terminal emulator until the block characters connect.
 
 ## Supported Python Versions:
 - 3.8
+- 3.9
 - 3.10
+- 3.11
+- 3.12
+- 3.13
 - newer then 3.6 (probably)
 
 
