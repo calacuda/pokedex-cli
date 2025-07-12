@@ -1,0 +1,39 @@
+[project]
+name = "pokedex"
+version = "0.2.0"
+description = "Pokédex CLI"
+authors = [
+    { name = "Calacuda", email = "eowest@gmail.com" },
+    { name = "calacuda" },
+]
+dependencies = ["setuptools>=80.9.0", "Pillow", "click"]
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "MIT" }
+keywords = ["pokedex", "pokemon", "terminal", "cli"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.8",
+]
+
+[project.urls]
+Homepage = "https://github.com/calacuda/pokedex-cli"
+Downloads = "https://github.com/calacuda/pokedex-cli"
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+pokedex = "pokedex.main:pokedex"
+
+# [build-system]
+# requires = ["pdm-backend"]
+# build-backend = "pdm.backend"
+#
+# [tool.pdm]
+# distribution = true
