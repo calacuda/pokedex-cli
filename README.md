@@ -29,8 +29,7 @@ $> cp -ur /tmp/pokedex-cli/pokedex/resources/* ~/.cache/pokedex/resources/
 
 **NOTE:** you might need to add `--break-system-packages` to the above pip command (if your linux distribution's version of python requires it).
 
-For the best output quality, please adjust the vertical line spacing in your
-terminal emulator until the block characters connect.
+For the best output quality, please adjust the vertical line spacing in your terminal emulator until the block characters connect.
 
 ## Supported Python Versions:
 - 3.8
@@ -44,8 +43,7 @@ terminal emulator until the block characters connect.
 
 ## Things That Don't Work
 
-"-f page" doesn't work. but it didn't work in the original, so I have no way of knowing
-how it is supposed to work.
+"-f page" doesn't work. but it didn't work in the original, so I have no way of knowing how it was intended to work.
 
 
 ## Usage
@@ -81,8 +79,6 @@ Options:
 - Icons adapted from [Pikachumazzinga on DeviantArt](http://pikachumazzinga.deviantart.com/art/Pokemon-Essentials-Icon-Pack-ORAS-UPDATE-424114559)
 - origianl code by [Tenchi2xh](https://github.com/Tenchi2xh/pokedex-cli)
 
-Pokémon © 2002-2016 Pokémon. © 1995-2016 Nintendo/Creatures Inc./GAME FREAK inc.
-TM, ® and Pokémon character names are trademarks of Nintendo.
+Pokémon © 2002-2016 Pokémon. © 1995-2016 Nintendo/Creatures Inc./GAME FREAK inc. TM, ® and Pokémon character names are trademarks of Nintendo.
 
-No copyright or trademark infringement is intended in using Pokémon content in
-this project.
+No copyright or trademark infringement is intended in using Pokémon content in this project.
